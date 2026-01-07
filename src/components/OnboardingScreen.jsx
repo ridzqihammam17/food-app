@@ -7,17 +7,17 @@ const onboardingData = [
   {
     image: emojiScreen1,
     title: 'Bingung mau makan apa?',
-    subtitle: 'Terlalu banyak pilihan, tapi ujung-ujungnya itu-itu lagi',
+    subtitle: 'Terlalu banyak pilihan, tapi ujung-ujungnya eh itu-itu lagi',
   },
   {
     image: emojiScreen2,
     title: 'Biar web ini yang tentuin!',
-    subtitle: 'Tinggal sekali tap dan kami acak pilihan makanannya buat kamu',
+    subtitle: 'Tinggal sekali tap dan kami akan pilihkan makanan kamu',
   },
   {
     image: emojiScreen3,
-    title: 'Siap tentukan makanmu hari ini?',
-    subtitle: 'Jangan kebanyakan mikir, langsung aja yuk kita pilih!',
+    title: 'Udah siap nentuin mau makan apa hari ini?',
+    subtitle: 'Jangan kebanyakan mikir ah, langsung aja yuk kita pilih!',
   },
 ]
 
