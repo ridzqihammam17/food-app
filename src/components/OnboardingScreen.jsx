@@ -16,8 +16,8 @@ const onboardingData = [
   },
   {
     image: emojiScreen3,
-    title: 'Udah siap nentuin mau makan apa hari ini?',
-    subtitle: 'Jangan kebanyakan mikir ah, langsung aja yuk kita pilih!',
+    title: 'Udah siap?',
+    subtitle: 'Jangan kebanyakan mikir ah, langsung aja yuk mulai spinnya!',
   },
 ]
 
