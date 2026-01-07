@@ -32,13 +32,17 @@ const OnboardingScreen = ({ onComplete }) => {
     }
   }
 
+  const handleDotClick = (index) => {
+    setCurrentIndex(index)
+  }
+
   const currentSlide = onboardingData[currentIndex]
   const isLastSlide = currentIndex === onboardingData.length - 1
 
   return (
     <div className="fixed inset-0 bg-white flex flex-col items-center justify-between p-6 md:p-12 lg:p-16">
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center max-w-2xl">
+      <div className="flex-1 flex flex-col items-center justify-center text-center max-w-2xl mb-8 md:mb-16 lg:mb-20">
         {/* Illustration */}
         <div className="mb-8 md:mb-12 animate-bounce-in" key={currentIndex}>
           <img
@@ -59,17 +63,19 @@ const OnboardingScreen = ({ onComplete }) => {
         </p>
       </div>
 
-      {/* Pagination Dots */}
-      <div className="flex gap-2 md:gap-3 mb-8 md:mb-12">
+      {/* Pagination Dots - Clickable */}
+      <div className="flex gap-2 md:gap-3 mb-6 md:mb-8">
         {onboardingData.map((_, index) => (
-          <div
+          <button
             key={index}
-            className={`h-2 md:h-3 rounded-full transition-all duration-300 ${
+            onClick={() => handleDotClick(index)}
+            className={`h-2 md:h-3 rounded-full transition-all duration-300 cursor-pointer hover:opacity-80 ${
               index === currentIndex
                 ? 'w-8 md:w-12'
                 : 'w-2 md:w-3 bg-gray-300'
             }`}
             style={index === currentIndex ? { backgroundColor: '#EC2578' } : {}}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

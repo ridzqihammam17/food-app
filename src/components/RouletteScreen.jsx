@@ -83,20 +83,20 @@ const RouletteScreen = () => {
   }
 
   return (
-    <div className="fixed inset-0 flex flex-col bg-white overflow-y-auto">
+    <div className="fixed inset-0 flex flex-col bg-white overflow-y-auto overflow-x-hidden">
       {/* Main Section - White Background */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 py-8 md:py-12 lg:py-16 min-h-screen">
+      <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-6 py-8 md:py-12 lg:py-16 min-h-screen">
         {/* Tagline */}
         <p className="text-gray-800 text-lg md:text-2xl lg:text-3xl italic font-light mb-8 md:mb-12 lg:mb-16 mt-0 md:mt-8 lg:mt-12 text-center max-w-2xl">
           A random choice, a happy meal
         </p>
 
         {/* Center Card Only - No Side Cards */}
-        <div className="relative w-full max-w-6xl flex items-center justify-center mb-8 md:mb-12 lg:mb-16 px-4">
+        <div className="relative w-full flex items-center justify-center mb-8 md:mb-12 lg:mb-16">
           {/* Center Card (Current) - Main Focus */}
           <div
             key={currentIndex}
-            className={`relative w-56 h-72 md:w-80 md:h-96 lg:w-96 lg:h-[500px] rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-200 ${
+            className={`relative w-52 h-64 md:w-72 md:h-80 lg:w-80 lg:h-96 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-200 ${
               isSpinning ? (isTransitioning ? 'opacity-70 scale-95' : 'opacity-100 scale-100') : 'animate-bounce-in'
             }`}
           >
