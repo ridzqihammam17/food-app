@@ -16,7 +16,6 @@ const SplashScreen = ({ onComplete }) => {
   useEffect(() => {
     let currentStep = 0
     const stepDuration = 600 // 600ms per step
-
     const interval = setInterval(() => {
       currentStep++
       if (currentStep < loadingSteps.length) {

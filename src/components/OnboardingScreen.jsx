@@ -82,10 +82,8 @@ const OnboardingScreen = ({ onComplete }) => {
     const minTranslate = -(onboardingData.length - 1) * slideWidth.current
 
     if (newTranslate > maxTranslate) {
-      // At first slide, add resistance
       setTranslateX(maxTranslate + diff * 0.3)
     } else if (newTranslate < minTranslate) {
-      // At last slide, add resistance
       setTranslateX(minTranslate + (diff * 0.3))
     } else {
       setTranslateX(newTranslate)

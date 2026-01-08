@@ -15,7 +15,7 @@ const ResultPopup = ({ food, onClose }) => {
             alt={food.name}
             className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-2xl md:rounded-3xl"
           />
-          {/* Party Cat Sticker - Bottom Left Corner */}
+          {/* Party Cat Sticker */}
           <img
             src={partySticker}
             alt="Party Cat"
@@ -38,7 +38,7 @@ const ResultPopup = ({ food, onClose }) => {
           {food.name}
         </h2>
 
-        {/* OK Button - White background with pink text */}
+        {/* Button */}
         <button
           onClick={onClose}
           className="w-full bg-white font-semibold text-base md:text-lg lg:text-xl py-4 md:py-5 lg:py-6 rounded-full shadow-lg transition-all duration-300 active:scale-95"
