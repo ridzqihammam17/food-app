@@ -1,20 +1,6 @@
 import { useState } from 'react'
 import ResultPopup from './ResultPopup'
-import food1 from '../assets/foods/food_1.png'
-import food2 from '../assets/foods/food_2.png'
-import food3 from '../assets/foods/food_3.png'
-import food4 from '../assets/foods/food_4.png'
-import food5 from '../assets/foods/food_5.png'
-import food6 from '../assets/foods/food_6.png'
-
-const foodList = [
-  { id: 1, name: 'Nasi Goreng', image: food1 },
-  { id: 2, name: 'Bakso', image: food2 },
-  { id: 3, name: 'Gado-gado', image: food3 },
-  { id: 4, name: 'Soto Ayam', image: food4 },
-  { id: 5, name: 'Mie Ayam', image: food5 },
-  { id: 6, name: 'Ayam Goreng', image: food6 },
-]
+import { foodList } from '../data/foodData'
 
 const RouletteScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
