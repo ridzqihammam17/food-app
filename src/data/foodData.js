@@ -13,6 +13,11 @@ const foodData = [
   { id: 5, name: 'Mie Ayam', imageFile: 'food_5.png' },
   { id: 6, name: 'Ayam Goreng', imageFile: 'food_6.png' },
   { id: 7, name: 'Iga Bakar', imageFile: 'food_7.png' },
+  { id: 8, name: 'Mie Goreng', imageFile: 'food_8.png' },
+  { id: 9, name: 'Soto Daging', imageFile: 'food_9.png' },
+  { id: 10, name: 'Ayam Geprek', imageFile: 'food_10.png' },
+  { id: 11, name: 'Nasi Pecel', imageFile: 'food_11.png' },
+  { id: 12, name: 'Nasi Uduk', imageFile: 'food_12.png' },
 ]
 
 export const foodList = foodData.map(food => ({

@@ -11,6 +11,11 @@ Web application that helps you decide what to eat!
 5. Mie Ayam
 6. Ayam Goreng
 7. Iga Bakar
+8. Mie Goreng
+9. Soto Daging
+10. Ayam Geprek
+11. Nasi Pecel
+12. Nasi Uduk
 
 ## 🚀 Getting Started
 
