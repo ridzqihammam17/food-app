@@ -167,23 +167,62 @@ const OnboardingScreen = ({ onComplete }) => {
         </div>
       </div>
 
-      {/* Pagination Dots - Animated */}
+      {/* Pagination Dots - Animated with Progressive Sliding */}
       <div className="flex gap-2 md:gap-3 mb-6 md:mb-8 mt-4 md:mt-6 relative">
         {onboardingData.map((_, index) => {
-          // Calculate opacity and width based on scroll position
+          // Calculate distance from current scroll position
           const distance = Math.abs(dotProgress - index)
-          const isActive = distance < 0.5
-          const opacity = isActive ? 1 : 0.3
+
+          // Progressive width calculation based on scroll position
+          // When dotProgress is exactly at index, width is 32px
+          // As it moves away, width decreases smoothly to 8px
+          const maxWidth = 32
+          const minWidth = 8
+          let width
+
+          if (distance <= 1) {
+            // Smooth interpolation between current and adjacent dots
+            width = maxWidth - (distance * (maxWidth - minWidth))
+          } else {
+            width = minWidth
+          }
+
+          // Progressive opacity calculation
+          // Dots closer to current position are more opaque
+          let opacity
+          if (distance <= 1) {
+            opacity = 1 - (distance * 0.7) // Fades from 1 to 0.3
+          } else {
+            opacity = 0.3
+          }
+
+          // Progressive color calculation
+          // Interpolate between active color (#EC2578) and inactive color (#D1D5DB)
+          let backgroundColor
+          if (distance <= 1) {
+            // Convert hex to RGB for interpolation
+            const activeColor = { r: 236, g: 37, b: 120 } // #EC2578
+            const inactiveColor = { r: 209, g: 213, b: 219 } // #D1D5DB
+
+            const r = Math.round(activeColor.r + (inactiveColor.r - activeColor.r) * distance)
+            const g = Math.round(activeColor.g + (inactiveColor.g - activeColor.g) * distance)
+            const b = Math.round(activeColor.b + (inactiveColor.b - activeColor.b) * distance)
+
+            backgroundColor = `rgb(${r}, ${g}, ${b})`
+          } else {
+            backgroundColor = '#D1D5DB'
+          }
 
           return (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className="h-2 md:h-3 rounded-full transition-all duration-300 cursor-pointer"
+              className="h-2 md:h-3 rounded-full cursor-pointer"
               style={{
-                width: isActive ? '32px' : '8px',
-                backgroundColor: isActive ? '#EC2578' : '#D1D5DB',
+                width: `${width}px`,
+                backgroundColor: backgroundColor,
                 opacity: opacity,
+                transition: isDragging ? 'none' : 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
               }}
               aria-label={`Go to slide ${index + 1}`}
             />
