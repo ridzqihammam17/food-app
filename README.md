@@ -16,6 +16,9 @@ Web application that helps you decide what to eat!
 10. Ayam Geprek
 11. Nasi Pecel
 12. Nasi Uduk
+13. Nasi Tutug Oncom
+14. Korean Fried Chicken
+15. Kwetiau Goreng
 
 ## 🚀 Getting Started
 
